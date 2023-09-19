@@ -6,7 +6,10 @@ run-name: ${{ github.actor }} Building and Testing
 # I want to do this when we push new change on main branch only
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "main" 
+    tags:
+      - '*'
 # There can be multiple jobs
 jobs:
   # Job name
@@ -38,8 +41,7 @@ jobs:
         with:
           # Your image name
           images: akraradets/ait-ml-dash
-          tags: |
-            type=semver,pattern={{version}}
+          tags: type=semver,pattern={{version}}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
