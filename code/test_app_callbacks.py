@@ -21,4 +21,4 @@ def test_model_output_shape():
 
 def test_model_coeff_shape():
     output = model1.get_coeff()
-    assert output.shape == (1,1), f"Expecting the shape to be (1,2) but got {output.shape=}"
+    assert output.shape == (1,2), f"Expecting the shape to be (1,2) but got {output.shape=}"
