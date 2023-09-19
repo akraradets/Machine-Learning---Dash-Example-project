@@ -1,5 +1,7 @@
-name: Docker Image CI
-
+# Name of this workflow
+name: Build-Test
+# Name of this run
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches: [ "main" ]
