@@ -53,6 +53,7 @@ jobs:
   deploy:
     environment: Production
     # needs: build-test
+    runs-on: ubuntu-latest
     steps:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v1.0.0
