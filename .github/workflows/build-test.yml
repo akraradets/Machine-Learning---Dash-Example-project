@@ -23,4 +23,4 @@ jobs:
         run: docker compose up -d
       # Execute pytest
       - name: Testing
-        run: docker compose exec -it dash pytest 
+        run: docker compose exec -it dash pytest -v
