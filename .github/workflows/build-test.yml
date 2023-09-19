@@ -21,3 +21,6 @@ jobs:
       # Execute terminal command.
       - name: Build the Docker image
         run: docker compose up -d
+      # Execute pytest
+      - name: Testing
+        run: docker compose exec -it dash pytest 
