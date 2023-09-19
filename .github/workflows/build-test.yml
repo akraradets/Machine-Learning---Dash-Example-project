@@ -38,8 +38,8 @@ jobs:
         with:
           # Your image name
           images: akraradets/ait-ml-dash
-        tags: |
-          type=semver,pattern={{version}}
+          tags: |
+            type=semver,pattern={{version}}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
