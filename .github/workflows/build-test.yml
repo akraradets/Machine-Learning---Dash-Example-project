@@ -1,0 +1,23 @@
+# Name of this workflow
+name: Build-Test
+# Name of this run
+run-name: ${{ github.actor }} Building and Testing
+# When this action will be trigger
+# I want to do this when we push new change on main branch only
+on:
+  push:
+    branches: [ "main" ]
+# There can be multiple jobs
+jobs:
+  # Job name
+  build:
+    # Target machine that this job will run on.
+    # ubuntu-latest or ubuntu-22.04 is the same image (as is August 2023)
+    runs-on: ubuntu-latest
+    # Tasks, specify in list.
+    steps:
+      # https://github.com/actions/checkout: will clone Git into the image
+      - uses: actions/checkout@v4
+      # Execute terminal command.
+      - name: Build the Docker image
+        run: docker compose up -d
