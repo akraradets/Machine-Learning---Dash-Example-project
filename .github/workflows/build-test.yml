@@ -3,13 +3,12 @@ name: Build-Test
 # Name of this run
 run-name: ${{ github.actor }} Building and Testing
 # When this action will be trigger
-# I want to do this when we push new change on main branch only
+# I want to do this when we push new change with tag.
+# This tag will be used next when we build and push the image to dockerhub
 on:
   push:
-    branches:
-      - "main" 
     tags:
-      - '*'
+      - 'v*'
 # There can be multiple jobs
 jobs:
   # Job name
