@@ -12,7 +12,7 @@ on:
 # There can be multiple jobs
 jobs:
   # Job name
-  build:
+  build-test:
     # Target machine that this job will run on.
     # ubuntu-latest or ubuntu-22.04 is the same image (as is August 2023)
     runs-on: ubuntu-latest
@@ -50,3 +50,18 @@ jobs:
           file: .Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+  deploy:
+    environment: Production
+    # needs: build-test
+    steps:
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ vars.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          proxy_host: ${{ secrets.PROXY_HOST }}
+          proxy_username: ${{ secrets.USERNAME }}
+          proxy_key: ${{ secrets.KEY }}
+          script: whoami
+  
