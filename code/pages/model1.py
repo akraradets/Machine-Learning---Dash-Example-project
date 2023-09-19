@@ -101,7 +101,7 @@ def calculate_y_hardcode(x_1, x_2, submit):
 def calculate_y_model(x_1, x_2, submit):
     pred = calculate_model(x_1,x_2)
     coef = get_coeff()
-    return f" model said: {pred=} {coef_=}" # type:ignore
+    return f" model said: {pred=} {coef=}" # type:ignore
 
 def get_coeff():
     from utils import load
