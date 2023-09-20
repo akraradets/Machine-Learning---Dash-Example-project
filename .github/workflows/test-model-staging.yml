@@ -12,8 +12,10 @@ jobs:
     steps:
       # This is the same as build-test
       - uses: actions/checkout@v4
-      - name: Build the Docker image
-        run: docker compose build
+      # We won't build
+      # - name: Build the Docker image
+      #   run: docker compose build
+      # This will only load the latest image
       - name: Compose up
         run: docker compose up -d
       # This is new

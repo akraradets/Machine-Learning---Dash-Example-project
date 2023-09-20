@@ -3,7 +3,7 @@ version: '3.9'
 services:
   dash:
     command: tail -f /dev/null
-    image: akraradets/ait-ml-dash:a3.0
+    image: akraradets/ait-ml-dash:latest
     platform: linux/x86_64
     build: 
       context: .
