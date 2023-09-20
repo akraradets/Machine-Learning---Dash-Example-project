@@ -4,6 +4,7 @@ name: Test Model on Staging
 run-name: ${{ github.actor }} Test model on staging
 
 # there is no trigger. I will do it manaully in GitHub.
+on: workflow_dispatch
 
 jobs:
   staging-test:
