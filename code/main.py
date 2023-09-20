@@ -27,4 +27,7 @@ app.layout = html.Div([
 
 # Run the app
 if __name__ == '__main__':
+    # Before we run the app, download model from mlflow server
+    from utils import load_mlflow
+    load_mlflow(stage="Production")
     app.run(debug=True)

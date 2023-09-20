@@ -104,15 +104,15 @@ def calculate_y_model(x_1, x_2, submit):
     return f" model said: {pred=} {coef=}" # type:ignore
 
 def get_coeff():
-    from utils import load
-    model = load('./models/myModel.pickle')
+    from utils import load_mlflow
+    model = load_mlflow(stage="Production")
     return model.coef_ # type:ignore
 
 def calculate_model(x_1,x_2):
-    from utils import load
+    from utils import load_mlflow
     import pandas as pd
     import numpy as np
-    model = load('./models/myModel.pickle')
+    model = load_mlflow(stage="Production")
     X = np.array([x_1,x_2]).reshape(-1,2)
     X = pd.DataFrame(X, columns=['x1', 'x2']) 
     pred = model.predict(X) # type:ignore

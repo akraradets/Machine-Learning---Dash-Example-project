@@ -13,6 +13,10 @@ RUN pip3 install scikit-learn
 # Testing module
 RUN pip3 install dash[testing]
 RUN pip3 install pytest
+RUN pip3 install pytest-depends
+
+# mlflow
+RUN pip3 install mlflow
 
 COPY ./code /root/code
 
