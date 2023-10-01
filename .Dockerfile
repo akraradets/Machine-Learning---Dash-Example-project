@@ -6,9 +6,8 @@ RUN pip3 install dash
 RUN pip3 install pandas
 RUN pip3 install dash_bootstrap_components
 RUN pip3 install dash-bootstrap-components[pandas]
-RUN pip3 install pandas
 RUN pip3 install numpy
-RUN pip3 install scikit-learn
+RUN pip3 install scikit-learn==1.3.1
 
 # Testing module
 RUN pip3 install dash[testing]
